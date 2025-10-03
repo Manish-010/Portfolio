@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manish P | AI Engineer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <canvas id="neural-bg"></canvas>
+
+    <nav id="navbar">
+        <div class="logo">&lt;MP /&gt;</div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link clickable">Home</a></li>
+            <li><a href="#about" class="nav-link clickable">About</a></li>
+            <li><a href="#gen-ai" class="nav-link clickable">GenAI</a></li>
+            <li><a href="#experience" class="nav-link clickable">Experience</a></li>
+            <li><a href="#projects" class="nav-link clickable">Projects</a></li>
+            <li><a href="#services" class="nav-link clickable">Services</a></li>
+            <li><a href="contact.html" class="nav-link clickable">Contact</a></li>
+        </ul>
+        <div class="hamburger clickable">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="greeting">Hello, I'm</p>
+                    <h1 class="hero-title">Manish P</h1>
+                    <div class="specialization-badge">
+                        <span class="badge-icon">⚡</span>
+                        <span class="badge-text">Specializing in Artificial Intelligence</span>
+                    </div>
+                    <div class="typing-container">
+                        <span class="typed-text"></span>
+                        <span class="cursor-blink">|</span>
+                    </div>
+                    <p class="hero-subtitle">AI Engineer specializing in intelligent systems, crafting solutions that bridge innovation and impact.</p>
+                    <div class="hero-cta">
+                        <a href="#gen-ai" class="btn btn-primary clickable">View GenAI Work</a>
+                        <a href="#about" class="btn btn-outline clickable">About Me</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="floating-card">
+                        <div class="card-inner clickable">
+                            <img src="images/profile-photo.jpg" alt="Manish P" onerror="this.onerror=null;this.src='https://placehold.co/450x550/FFF8F0/2D2A26?text=Manish+P';">
+                            <div class="card-glow"></div>
+                            <div class="cv-download-overlay">
+                                <a href="Manish_Resume.pdf" class="btn btn-primary clickable" download>Get My CV</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse"><div class="wheel"></div></div>
+                <p>Scroll Down</p>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">01</span>
+                    <h2 class="section-title">About Me</h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="about-wrapper">
+                    <div class="about-content">
+                        <div class="about-text">
+                            <p class="lead">
+                                I'm an <span class="highlight">AI Engineer at Beetalogic Software Solutions</span>, passionate about building intelligent systems that solve real-world problems. My academic foundation is a <span class="highlight">B.Tech in AI & Data Science</span> from Kangeyam Institute of Technology.
+                            </p>
+                             <div class="philosophy-section">
+                                <h3>My Philosophy</h3>
+                                <p>Inspired by the vision of leaders like Dr. A.P.J. Abdul Kalam, I believe technology's true purpose is to serve humanity. My ambition is to build intelligent systems that are not just functional, but also ethical, accessible, and genuinely beneficial to society. This principle guides every project I undertake.</p>
+                            </div>
+                             <div class="quick-stats">
+                                <div class="stat-item"><span class="stat-number" data-target="10" data-symbol="+">0</span><span class="stat-label">Projects Completed</span></div>
+                                <div class="stat-item"><span class="stat-number" data-target="5" data-symbol="+">0</span><span class="stat-label">Leadership Roles</span></div>
+                                <div class="stat-item"><span class="stat-number" data-target="83" data-symbol="%">0</span><span class="stat-label">Academic Score</span></div>
+                            </div>
+                        </div>
+                        <div class="skills-showcase">
+                             <h3>Technical Arsenal</h3>
+                            <div class="skill-category">
+                                <h4>Core AI & ML</h4>
+                                <div class="skill-bars">
+                                    <div class="skill-bar" data-skill="Machine Learning"><div class="bar-track"><div class="fill" data-level="90"></div></div></div>
+                                    <div class="skill-bar" data-skill="Deep Learning"><div class="bar-track"><div class="fill" data-level="85"></div></div></div>
+                                    <div class="skill-bar" data-skill="Computer Vision"><div class="bar-track"><div class="fill" data-level="88"></div></div></div>
+                                    <div class="skill-bar" data-skill="NLP"><div class="bar-track"><div class="fill" data-level="82"></div></div></div>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Generative AI Stack</h4>
+                                <div class="skill-tags"><span class="skill-tag clickable">LLMs (GPT, Llama)</span><span class="skill-tag clickable">RAG Frameworks</span><span class="skill-tag clickable">Vector Databases</span><span class="skill-tag clickable">Fine-Tuning</span><span class="skill-tag clickable">Prompt Engineering</span></div>
+                            </div>
+                             <div class="skill-category">
+                                <h4>Tools & Technologies</h4>
+                                <div class="skill-tags"><span class="skill-tag clickable">Python</span><span class="skill-tag clickable">Java</span><span class="skill-tag clickable">SQL</span><span class="skill-tag clickable">PyTorch</span><span class="skill-tag clickable">TensorFlow</span><span class="skill-tag clickable">Git</span><span class="skill-tag clickable">AWS</span><span class="skill-tag clickable">KNIME</span><span class="skill-tag clickable">Power BI</span></div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="about-additional-grid">
+                        <div class="languages-section">
+                            <h3>Languages</h3>
+                            <div class="languages-grid">
+                                <div class="language-card clickable" data-modal-key="tamil">
+                                    <div class="lang-header"><span class="lang-name">தமிழ் (Tamil)</span><span class="lang-badge">Mother Tongue</span></div>
+                                    <div class="lang-bars">
+                                        <div class="lang-bar"><span class="lang-label">Read</span><div class="bar-track"><div class="fill" data-level="100"></div></div></div>
+                                        <div class="lang-bar"><span class="lang-label">Write</span><div class="bar-track"><div class="fill" data-level="100"></div></div></div>
+                                        <div class="lang-bar"><span class="lang-label">Speak</span><div class="bar-track"><div class="fill" data-level="100"></div></div></div>
+                                    </div>
+                                </div>
+                                <div class="language-card clickable" data-modal-key="english">
+                                    <div class="lang-header"><span class="lang-name">English</span><span class="lang-badge">Professional</span></div>
+                                    <div class="lang-bars">
+                                        <div class="lang-bar"><span class="lang-label">Read</span><div class="bar-track"><div class="fill" data-level="95"></div></div></div>
+                                        <div class="lang-bar"><span class="lang-label">Write</span><div class="bar-track"><div class="fill" data-level="90"></div></div></div>
+                                        <div class="lang-bar"><span class="lang-label">Speak</span><div class="bar-track"><div class="fill" data-level="85"></div></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="certifications-section">
+                            <h3>Certifications</h3>
+                            <div class="cert-grid">
+                                <div class="cert-card clickable" data-modal-key="hp-life"><h4>HP LIFE Certified: Design Thinking</h4><p class="cert-issuer">HP LIFE</p></div>
+                                <div class="cert-card clickable" data-modal-key="mcp"><h4>Introduction to Model Context Protocol</h4><p class="cert-issuer">Anthropic</p></div>
+                                <div class="cert-card clickable" data-modal-key="genai"><h4>Career Essentials in Generative AI</h4><p class="cert-issuer">Microsoft + LinkedIn</p></div>
+                                <div class="cert-card clickable" data-modal-key="tcs-ion"><h4>TCS ION Career Edge</h4><p class="cert-issuer">TCS</p></div>
+                                <div class="cert-card clickable" data-modal-key="more"><h4>...and more</h4><p class="cert-issuer">Click to view message</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="gen-ai" class="gen-ai-showcase">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">02</span>
+                    <h2 class="section-title">Generative AI Showcase</h2>
+                    <div class="title-underline"></div>
+                </div>
+                
+                <p class="section-intro">My primary focus is on building practical, high-value applications using the latest in AI. Below are key projects that demonstrate my ability to translate complex AI concepts into tangible solutions.</p>
+
+                <div class="gen-ai-grid">
+                    <div class="project-card clickable" data-modal-key="ad-generator">
+                        <div class="project-image"><img src="images/adgen.png" alt="AI Ad Generator" onerror="this.onerror=null;this.src='https://placehold.co/400x280/2a2723/D2691E?text=AI+Ad+Generator';"></div>
+                        <div class="project-info">
+                            <span class="project-category">Generative AI</span>
+                            <h3>AI Ad Content Generator</h3>
+                            <p>Launch campaigns 10x faster with AI-generated multi-format content.</p>
+                        </div>
+                    </div>
+                    <div class="project-card clickable" data-modal-key="mindhaven">
+                        <div class="project-image"><img src="images/chatbot.png" alt="MindHaven AI Chatbot" onerror="this.onerror=null;this.src='https://placehold.co/400x280/2a2723/D2691E?text=MindHaven+AI';"></div>
+                        <div class="project-info">
+                            <span class="project-category">Conversational AI</span>
+                            <h3>MindHaven: AI Chatbot</h3>
+                            <p>An ethical AI for mental wellness support and early detection.</p>
+                        </div>
+                    </div>
+                    <div class="project-card clickable" data-modal-key="sentiment-analysis">
+                        <div class="project-image"><img src="images/tam-mal.png" alt="Sentiment Analysis" onerror="this.onerror=null;this.src='https://placehold.co/400x280/2a2723/D2691E?text=Tamil/Malayalam+NLP';"></div>
+                        <div class="project-info">
+                            <span class="project-category">Natural Language Processing</span>
+                            <h3>Regional Language Sentiment Analysis</h3>
+                            <p>Foundational NLP for advanced AI models in Tamil & Malayalam.</p>
+                        </div>
+                    </div>
+                     <div class="project-card clickable" data-modal-key="ai-resume">
+                        <div class="project-image"><img src="images/ai-resume.png" alt="AI Resume Tool" onerror="this.onerror=null;this.src='https://placehold.co/400x280/2a2723/D2691E?text=AI+Resume+Screener';"></div>
+                        <div class="project-info">
+                             <span class="project-category">Natural Language Processing</span>
+                            <h3>AI Resume Screener</h3>
+                            <p>Automating recruitment with intelligent resume analysis and ranking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="experience">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">03</span>
+                    <h2 class="section-title">Experience & Education</h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item"><div class="timeline-marker current"></div><div class="timeline-content clickable" data-modal-key="beetalogic"><span class="timeline-date">June 2025 - Present</span><h3>AI Developer (ML & DL)</h3><h4>Beetalogic Software Solutions</h4><p>Developing and deploying AI-powered solutions using ML/DL. Building real-time computer vision systems with OpenCV and MediaPipe.</p><div class="timeline-tags"><span class="clickable">ML</span><span class="clickable">DL</span><span class="clickable">Computer Vision</span><span class="clickable">NLP</span></div></div></div>
+                    <div class="timeline-item"><div class="timeline-marker"></div><div class="timeline-content clickable" data-modal-key="dynaspede"><span class="timeline-date">April - May 2025</span><h3>Automation & Robotics Intern</h3><h4>Dynaspede Integrated Systems</h4><p>Designed automated vehicle system for industrial robotics training. Focused on real-time control and sensor integration.</p><div class="timeline-tags"><span class="clickable">Robotics</span><span class="clickable">Automation</span><span class="clickable">IoT</span></div></div></div>
+                    <div class="timeline-item"><div class="timeline-marker"></div><div class="timeline-content clickable" data-modal-key="gkt"><span class="timeline-date">Aug - Sep 2024</span><h3>AI Tools Intern - KNIME</h3><h4>Global Knowledge Technologies</h4><p>Built end-to-end data workflows and ML pipelines. Automated data preprocessing and modeling tasks.</p><div class="timeline-tags"><span class="clickable">KNIME</span><span class="clickable">Data Pipeline</span></div></div></div>
+                    <div class="timeline-item"><div class="timeline-marker current"></div><div class="timeline-content clickable" data-modal-key="kit-btech"><span class="timeline-date">Oct 2022 - Present</span><h3>B.Tech in AI & Data Science</h3><h4>Kangeyam Institute Of Technology</h4><p>Anna University | CGPA: 8.29</p></div></div>
+                    <div class="timeline-item"><div class="timeline-marker"></div><div class="timeline-content clickable" data-modal-key="sr-hsc"><span class="timeline-date">2020 - 2022</span><h3>Higher Secondary (Computer Science)</h3><h4>SR Matriculation Hr. Sec. School</h4><p>Grade: 80%</p></div></div>
+                    <div class="timeline-item"><div class="timeline-marker"></div><div class="timeline-content clickable" data-modal-key="kongu-sslc"><span class="timeline-date">2019 - 2020</span><h3>SSLC</h3><h4>Kongu Matriculation School</h4><p>Grade: 60%</p></div></div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="recognitions" class="recognitions">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">04</span>
+                    <h2 class="section-title">Leadership & Recognitions</h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="recognitions-grid">
+                    <div class="recognition-card">
+                        <div class="recognition-link">
+                            <a href="https://www.kitech.edu.in/" target="_blank" rel="noopener noreferrer" class="clickable">
+                                <img src="images/kit-logo.png" alt="Kangeyam Institute Of Technology Logo" class="recognition-logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100/FFF8F0/2D2A26?text=KIT';">
+                            </a>
+                            <div class="recognition-content">
+                                <h3>Kangeyam Institute Of Technology</h3>
+                                <h4>Secretary - Alumni Cell Club & Student Coordinator</h4>
+                                <p>Organized alumni interactions, managed communications, and facilitated technical sessions for college symposiums.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recognition-card">
+                        <div class="recognition-link">
+                            <a href="https://vetias.ac.in/" target="_blank" rel="noopener noreferrer" class="clickable">
+                                <img src="images/vet.png" alt="VET College of Arts and Science Logo" class="recognition-logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100/FFF8F0/2D2A26?text=VET';">
+                            </a>
+                            <div class="recognition-content">
+                                <h3>VET College of Arts and Science</h3>
+                                <h4>Resource Person</h4>
+                                <p>Invited to lead a 5-day hands-on training session on AI & Emerging Technologies for students in August 2025.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">05</span>
+                    <h2 class="section-title">AI & Deep Learning Projects</h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card clickable" data-modal-key="tuberculosis"><div class="project-image"><img src="images/tb.png" alt="Tuberculosis Detection" onerror="this.onerror=null;this.src='https://placehold.co/400x280/FFF8F0/D2691E?text=TB+Analysis+Suite';"><div class="project-overlay"><button class="btn-view clickable">View Details</button></div></div><div class="project-info"><span class="project-category">Deep Learning</span><h3>Tuberculosis Analysis Suite</h3><p>An AI system for prediction, detection, and segmentation of TB from patient data and X-rays.</p><div class="project-tech"><span class="clickable">Deep Learning</span><span class="clickable">Healthcare AI</span><span class="clickable">Segmentation</span></div></div></div>
+                    <div class="project-card clickable" data-modal-key="forest-segmentation"><div class="project-image"><img src="images/forest.png" alt="Forest Segmentation" onerror="this.onerror=null;this.src='https://placehold.co/400x280/FFF8F0/D2691E?text=Forest+Segmentation';"><div class="project-overlay"><button class="btn-view clickable">View Details</button></div></div><div class="project-info"><span class="project-category">Computer Vision</span><h3>Forest Segmentation</h3><p>A YOLOv5-based model for forest area detection with interactive overlay visualization.</p><div class="project-tech"><span class="clickable">YOLOv5</span><span class="clickable">Segmentation</span><span class="clickable">OpenCV</span></div></div></div>
+                    <div class="project-card clickable" data-modal-key="lunar-enhancer"><div class="project-image"><img src="images/img-lunar.png" alt="Lunar Image Enhancer" onerror="this.onerror=null;this.src='https://placehold.co/400x280/FFF8F0/D2691E?text=Lunar+Image+Enhancer';"><div class="project-overlay"><button class="btn-view clickable">View Details</button></div></div><div class="project-info"><span class="project-category">Image Processing</span><h3>Lunar Image Enhancer</h3><p>Sophisticated tool using Fourier Transforms to enhance satellite lunar images.</p><div class="project-tech"><span class="clickable">OpenCV</span><span class="clickable">Python</span><span class="clickable">FFT</span></div></div></div>
+                    <div class="project-card clickable" data-modal-key="pc-control"><div class="project-image"><img src="images/pc.png" alt="Hands-Free PC Control" onerror="this.onerror=null;this.src='https://placehold.co/400x280/FFF8F0/D2691E?text=Hands-Free+PC+Control';"><div class="project-overlay"><button class="btn-view clickable">View Details</button></div></div><div class="project-info"><span class="project-category">Computer Vision</span><h3>Hands-Free PC Control</h3><p>A real-time laptop control system using eye movement tracking for accessibility.</p><div class="project-tech"><span class="clickable">OpenCV</span><span class="clickable">MediaPipe</span><span class="clickable">PyAutoGUI</span></div></div></div>
+                    <div class="project-card clickable" data-modal-key="neurocept"><div class="project-image"><img src="images/neurocept.png" alt="Neurocept" onerror="this.onerror=null;this.src='https://placehold.co/400x280/FFF8F0/D2691E?text=Neurocept+Detector';"><div class="project-overlay"><button class="btn-view clickable">View Details</button></div></div><div class="project-info"><span class="project-category">Deep Learning</span><h3>Neurocept: Real vs Fake Detector</h3><p>A deep learning model to classify real and manipulated images for content verification.</p><div class="project-tech"><span class="clickable">PyTorch</span><span class="clickable">CNNs</span><span class="clickable">Image Processing</span></div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="scroller-section">
+            <div class="scroller" data-speed="slow">
+                <ul class="tag-list scroller-inner">
+                    <li><a href="#projects" class="clickable">Hands-Free PC Control</a></li>
+                    <li><a href="#finale" class="clickable">Blogging</a></li>
+                    <li><a href="#projects" class="clickable">Healthcare AI</a></li>
+                    <li><a href="#gen-ai" class="clickable">Generative AI</a></li>
+                    <li><a href="#projects" class="clickable">NLP</a></li>
+                    <li><a href="#services" class="clickable">Custom Solutions</a></li>
+                    <li><a href="#projects" class="clickable">YOLOv5</a></li>
+                    <li><a href="https://medium.com/@imanish232005" target="_blank" rel="noopener noreferrer" class="clickable">Medium Articles</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">06</span>
+                    <h2 class="section-title">Testimonials</h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card clickable"><div class="testimonial-card-inner"><div class="testimonial-card-front"><div class="testimonial-avatar">👩‍🏫</div><h4>Dr. S. Selvi</h4><span>Head of Department, AI & DS, KIT</span></div><div class="testimonial-card-back"><p>"Manish is a dedicated student who excels in academics and project work. His confidence in handling complex AI systems makes him a standout."</p></div></div></div>
+                    <div class="testimonial-card clickable"><div class="testimonial-card-inner"><div class="testimonial-card-front"><div class="testimonial-avatar">👨‍💼</div><h4>Mr. Ravikumar Devaraj</h4><span>HR Manager, Beetalogic Software Solutions</span></div><div class="testimonial-card-back"><p>"Manish is a quick learner with strong technical skills, contributing innovative solutions to AI computer vision projects and proving to be a valuable team member."</p></div></div></div>
+                    <div class="testimonial-card clickable"><div class="testimonial-card-inner"><div class="testimonial-card-front"><div class="testimonial-avatar">👨‍🏫</div><h4>V. Rajaram</h4><span>Assistant Professor, AI & DS, KIT</span></div><div class="testimonial-card-back"><p>"Manish shows exceptional leadership and initiative. His passion for organizing and participating in events is evident in every contribution."</p></div></div></div>
+                    <div class="testimonial-card clickable"><div class="testimonial-card-inner"><div class="testimonial-card-front"><div class="testimonial-avatar">👨‍🏫</div><h4>Dr. P. Vishnu Raja</h4><span>Head of Department, AI & ML, KIT</span></div><div class="testimonial-card-back"><p>"Manish’s achievements reflect his hard work in projects, effective coordination, and active participation in multiple activities."</p></div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">07</span>
+                    <h2 class="section-title">Services I Offer</h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card clickable" data-modal-key="custom-ai"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div><h3>Custom AI Solutions</h3><p>Automate tasks with CV, NLP, and predictive models.</p></div>
+                    <div class="service-card clickable" data-modal-key="iot-automation"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div><h3>IoT & Automation</h3><p>Smart solutions for homes, farms, and industry.</p></div>
+                    <div class="service-card clickable" data-modal-key="workshops"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>AI Workshops & Training</h3><p>Hands-on sessions and seminars on AI & IoT.</p></div>
+                    <div class="service-card clickable" data-modal-key="chatbots"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div><h3>Intelligent Chatbots</h3><p>Engaging conversational AI for your applications.</p></div>
+                    <div class="service-card clickable" data-modal-key="predictive-analytics"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg></div><h3>Predictive Analytics</h3><p>Turn raw data into powerful business insights.</p></div>
+                    <div class="service-card clickable" data-modal-key="ai-agriculture"><div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13V6a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v7a7 7 0 0 1-7 7h-1Z"></path><path d="M12 20v-4"></path><path d="M4 13a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4"></path></svg></div><h3>AI in Agriculture</h3><p>Boost crop yield and farm efficiency with AI.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="finale" class="finale-section">
+            <div class="finale-grid">
+                <div class="orbital-container">
+                    <a href="https://www.linkedin.com/in/manish-p-5017032a3/" target="_blank" rel="noopener noreferrer" class="orbital-button-small clickable">
+                        <span>Connect</span>
+                        <svg class="orbital-text-small" viewBox="0 0 100 100">
+                            <path id="circlePathSmall" fill="none" d="M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" />
+                            <text>
+                                <textPath xlink:href="#circlePathSmall">
+                                    • Connect with Me • Expand Connections
+                                </textPath>
+                            </text>
+                        </svg>
+                    </a>
+                </div>
+                <div id="journey" class="journey-container">
+                    <div class="journey-content">
+                        <h2>Unfold My Thoughts</h2>
+                        <p>Beyond the projects lies a narrative of curiosity and creation. I document my journey—exploring AI, sharing insights, and breaking down complex ideas. Join me in the conversation.</p>
+                        <a href="https://medium.com/@imanish232005" target="_blank" rel="noopener noreferrer" class="btn btn-outline magnetic-btn clickable">Explore The Blog</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-cta" class="get-in-touch">
+            <div class="container">
+                <div class="footer-cta">
+                    <a href="contact.html" class="btn btn-primary clickable">Message Me</a>
+                    <a href="Manish_Resume.pdf" class="btn btn-outline clickable" download>Get My CV</a>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <div class="container">
+                 <div class="get-in-touch-links">
+                    <div class="footer-column">
+                        <h3>Follow Me</h3>
+                        <ul>
+                            <li><a href="https://www.linkedin.com/in/manish-p-5017032a3/" target="_blank" rel="noopener noreferrer" class="clickable">LinkedIn</a></li>
+                            <li><a href="https://github.com/Manish-010" target="_blank" rel="noopener noreferrer" class="clickable">GitHub</a></li>
+                            <li><a href="https://medium.com/@imanish232005" target="_blank" rel="noopener noreferrer" class="clickable">Medium</a></li>
+                            <li><a href="https://www.instagram.com/imanish_23?igsh=cnp0bDRmOGo4b3Iz" target="_blank" rel="noopener noreferrer" class="clickable">Instagram</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contact Me</h3>
+                        <ul>
+                            <li><a href="mailto:imanish232005@gmail.com" class="clickable">imanish232005@gmail.com</a></li>
+                            <li><a href="tel:+919345504199" class="clickable">+91 93455 04199</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                     <p>&copy; 2025 Manish P. | Design by Manish</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-container" id="modal-container"></div>
+    </div>
+    
+    <a href="#home" class="go-top-btn clickable" aria-label="Go to top">↑</a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

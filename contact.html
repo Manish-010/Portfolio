@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Manish P</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="contact-page-body">
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <canvas id="neural-bg"></canvas>
+    
+    <a href="#" onclick="history.back(); return false;" class="back-to-home clickable" aria-label="Back to previous page">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+    </a>
+
+    <nav id="navbar">
+        <div class="logo">&lt;MP /&gt;</div>
+        <ul class="nav-links">
+            <li><a href="index.html#home" class="nav-link clickable">Home</a></li>
+            <li><a href="index.html#about" class="nav-link clickable">About</a></li>
+            <li><a href="index.html#gen-ai" class="nav-link clickable">GenAI</a></li>
+            <li><a href="index.html#experience" class="nav-link clickable">Experience</a></li>
+            <li><a href="index.html#projects" class="nav-link clickable">Projects</a></li>
+            <li><a href="index.html#services" class="nav-link clickable">Services</a></li>
+            <li><a href="contact.html" class="nav-link active clickable">Contact</a></li>
+        </ul>
+        <div class="hamburger clickable">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <main class="contact-main">
+        <div class="contact-container">
+            <div class="contact-header">
+                <span class="section-number">08</span>
+                <h1 class="section-title">👋 Let's Collaborate!</h1>
+                <div class="title-underline"></div>
+                <p>Have a project, an idea, or just want to connect? I'm always open to new opportunities. Fill out the form below to get in touch.</p>
+            </div>
+
+            <form id="contactForm" class="contact-form" action="https://formspree.io/f/xanpepew" method="POST">
+                
+                <div class="form-group full-width">
+                    <label>Why are you contacting me?</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item clickable"><input type="checkbox" id="reason2" name="reason[]" value="collaboration"><label for="reason2">Tech Project Collaboration</label></div>
+                        <div class="checkbox-item clickable"><input type="checkbox" id="reason3" name="reason[]" value="event-help"><label for="reason3">Event Organizing Help</label></div>
+                        <div class="checkbox-item clickable"><input type="checkbox" id="reason4" name="reason[]" value="problem-solving"><label for="reason4">Problem Solving</label></div>
+                        <div class="checkbox-item clickable"><input type="checkbox" id="reason5" name="reason[]" value="workshop"><label for="reason5">College/School Workshop</label></div>
+                        <div class="checkbox-item clickable"><input type="checkbox" id="reason6" name="reason[]" value="lecture"><label for="reason6">Guest Lecture or Seminar</label></div>
+                        <div class="checkbox-item clickable"><input type="checkbox" id="reason7" name="reason[]" value="training"><label for="reason7">Personal Training Session</label></div>
+                        <div class="checkbox-item clickable"><input type="checkbox" id="reason8" name="reason[]" value="greeting"><label for="reason8">Just want to say hi 😄</label></div>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>How do you prefer to connect?</label>
+                    <div class="radio-group">
+                        <div class="checkbox-item clickable"><input type="radio" id="pref1" name="preference" value="daily"><label for="pref1">Daily Sessions</label></div>
+                        <div class="checkbox-item clickable"><input type="radio" id="pref2" name="preference" value="hourly"><label for="pref2">Hourly Guidance</label></div>
+                        <div class="checkbox-item clickable"><input type="radio" id="pref3" name="preference" value="onetime"><label for="pref3">One-Time Support</label></div>
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="preferred-mode">Preferred Mode</label>
+                    <select id="preferred-mode" name="preferred-mode">
+                        <option value="">Select your preferred way</option>
+                        <option value="Online">Online (Google Meet / Zoom)</option>
+                        <option value="Text-based">Text-based (Chat/Email)</option>
+                        <option value="Hybrid">Hybrid</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="message">Your Message / Idea *</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Share your idea, event details, or your challenge..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                 <div class="form-group full-width">
+                    <label for="mobile">Your Mobile Number</label>
+                    <input type="tel" id="mobile" name="mobile">
+                </div>
+                
+                <button type="submit" class="btn btn-primary clickable">🚀 Let's Make It Happen</button>
+            </form>
+             <div id="form-status"></div>
+
+             <div class="instagram-follow">
+                <a href="https://www.instagram.com/imanish_23?igsh=cnp0bDRmOGo4b3Iz" target="_blank" rel="noopener noreferrer" class="clickable">
+                    📸 Follow me on Instagram: <strong>@imanish_23</strong>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+             <div class="footer-bottom">
+                 <p>&copy; 2025 Manish P. All rights reserved.</p>
+             </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Contact Form Specific Logic
+        const form = document.getElementById('contactForm');
+        const statusDiv = document.getElementById('form-status');
+        
+        async function handleSubmit(event) {
+            event.preventDefault();
+            const data = new FormData(event.target);
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    statusDiv.innerHTML = "Thanks for your submission!";
+                    statusDiv.className = 'success';
+                    form.reset();
+                    setTimeout(() => statusDiv.innerHTML = '', 5000);
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            statusDiv.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            statusDiv.innerHTML = "Oops! There was a problem submitting your form";
+                        }
+                        statusDiv.className = 'error';
+                    });
+                }
+            }).catch(error => {
+                statusDiv.innerHTML = "Oops! There was a problem submitting your form";
+                statusDiv.className = 'error';
+            });
+        }
+        form.addEventListener("submit", handleSubmit);
+    </script>
+</body>
+</html>
