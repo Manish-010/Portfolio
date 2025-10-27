@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidhai AI - Community of Innovators</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Embedded CSS (Cream & Brown Theme) -->
+    <style>
+        /* CSS Variables for your warm, professional theme */
+        :root {
+            --bg-color: #FFF8F0;      /* Warm Cream Background */
+            --primary-text: #3E3832;  /* Dark Brown Text */
+            --secondary-text: #706860;/* Lighter Brown Text */
+            --accent-color: #E07A5F;  /* Rust/Orange Accent */
+            --card-bg: #FFFFFF;      /* White Card Background */
+            --border-color: #E0E0E0;  /* Light Grey Borders */
+            
+            --font-primary: 'Space Grotesk', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--bg-color);
+            color: var(--primary-text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            /* No custom cursor for this theme to match your portfolio */
+            cursor: default; 
+        }
+
+        /* Neural Background Canvas */
+        #neural-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.15; /* Kept for a subtle tech feel */
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background-color: rgba(255, 248, 240, 0.8); /* Translucent Cream */
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        /* This is the logo from your portfolio, linking back */
+        .logo-with-arrow {
+            text-decoration: none;
+            color: var(--primary-text);
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .back-arrow-icon {
+            stroke: var(--primary-text);
+            transition: transform 0.3s;
+        }
+        .logo-with-arrow:hover .back-arrow-icon {
+            transform: translateX(-5px);
+        }
+        .logo-with-arrow:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--primary-text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-color);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background-color: var(--primary-text);
+            margin: 4px 0;
+            transition: all 0.3s;
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 100px; 
+        }
+
+        /* Hero Section */
+        .vidhai-hero {
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .vidhai-logo {
+            width: 250px; /* Increased from 120px */
+            height: 250px; /* Increased from 120px */
+            margin-bottom: 1.5rem;
+            border-radius: 50%;
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            object-fit: cover; /* Ensures logo fits well */
+        }
+        
+        .vidhai-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-text);
+            margin-bottom: 0.5rem;
+        }
+        
+        .vidhai-subtitle {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-family: var(--font-mono);
+        }
+        
+        .vidhai-description {
+            font-size: 1.1rem;
+            color: var(--secondary-text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* General Section Styling */
+        .vidhai-section {
+            padding: 4rem 0;
+        }
+        
+        .vidhai-mission {
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .title-underline {
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Mission Section */
+        .mission-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .mission-content p {
+            font-size: 1.2rem;
+            color: var(--secondary-text);
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Core Programs Section */
+        .offerings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .offering-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .offering-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(224, 122, 95, 0.1);
+        }
+        
+        .offering-card .offering-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .offering-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-text);
+            margin-bottom: 0.75rem;
+        }
+        
+        .offering-card p {
+            font-size: 1rem;
+            color: var(--secondary-text);
+        }
+
+        /* Guiding Principle Section */
+        .principle-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .thirukkural {
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 2;
+            color: var(--primary-text);
+            margin-bottom: 1rem;
+            font-style: normal;
+        }
+        
+        .thirukkural cite {
+            display: block;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 500;
+            color: var(--accent-color);
+            margin-top: 0.5rem;
+        }
+        
+        .kural-translation {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--secondary-text);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 0;
+            background-color: var(--card-bg);
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.1rem;
+            color: var(--secondary-text);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons .btn {
+            margin: 0.5rem;
+        }
+
+        /* Buttons */
+        .btn {
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-family: var(--font-mono);
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: #FFFFFF;
+        }
+        
+        .btn-primary:hover {
+            background-color: #d8684a;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        .vidhai-footer {
+            padding: 4rem 0 2rem;
+            text-align: center; /* Simpler footer */
+        }
+        
+        .footer-column {
+             margin-bottom: 2rem;
+        }
+
+        .footer-column h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-text);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-column p {
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            display: flex; /* Horizontal links */
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        
+        .footer-column ul a {
+            text-decoration: none;
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul a:hover {
+            color: var(--accent-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer-bottom p {
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+        }
+
+        /* Go to Top Button */
+        .go-top-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-color);
+            color: #FFFFFF;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+            transform: translateY(20px);
+        }
+        
+        .go-top-btn.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .go-top-btn:hover {
+            background-color: #d8684a;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px; /* Navbar height */
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--bg-color);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 3rem;
+                transition: left 0.5s ease-in-out;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+            
+            .nav-link {
+                font-size: 1.2rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+            
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active span:nth-c-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+
+            .vidhai-title {
+                font-size: 2.5rem;
+            }
+            .vidhai-subtitle {
+                font-size: 1.2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .cta-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+            .btn {
+                width: 80%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body class="vidhai-page-body">
+
+    <!-- Neural Network Background -->
+    <canvas id="neural-bg"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <!-- This is the logo from your portfolio, linking back -->
+        <a href="index.html" class="logo-with-arrow clickable">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="back-arrow-icon"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            &lt;MP /&gt; 
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link clickable">Home</a></li>
+            <li><a href="#navbar" class="nav-link active clickable">Vidhai AI</a></li>
+            <li><a href="contact.html" class="nav-link clickable">Contact</a></li>
+        </ul>
+        <div class="hamburger clickable">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="vidhai-hero">
+            <div class="container" style="text-align: center;">
+                <img src="images/vidhai.png" alt="Vidhai AI Logo" class="vidhai-logo" onerror="this.onerror=null;this.src='https://placehold.co/140x140/3E3832/FFF8F0?text=Vidhai&font=space-grotesk';">
+                <h1 class="vidhai-title">Vidhai AI</h1>
+                <p class="vidhai-subtitle">விதை - Sowing the Seeds of Intelligence</p>
+                <p class="vidhai-description">
+                    Making AI accessible to every curious mind. A community where we learn by building and grow by sharing.
+                </p>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="vidhai-section vidhai-mission">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Mission</h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="mission-content">
+                    <p>
+                        <strong class="highlight">Vidhai AI</strong> is built on a simple yet powerful principle: the best way to learn is to build, and the best way to grow is to share.
+                    </D>
+                    <p>
+                        We believe that artificial intelligence shouldn't be confined to elite institutions. Everyone curious about AI deserves access to knowledge, mentorship, and a path to creation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Programs Section -->
+        <section class="vidhai-section vidhai-programs" id="vidhai-programs">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Core Programs</h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="offerings-grid">
+                    <div class="offering-card clickable">
+                        <div class="offering-icon">🧑‍🏫</div>
+                        <h3>Code-Clinics</h3>
+                        <p>Weekly "office hours" where you can get 1-on-1 help from senior mentors to debug your code and solve problems.</p>
+                    </div>
+                    <div class="offering-card clickable">
+                        <div class="offering-icon">💡</div>
+                        <h3>Project Incubation</h3>
+                        <p>We guide you from a simple idea to a fully deployed project, providing mentorship at every step of the lifecycle.</p>
+                    </div>
+                    <div class="offering-card clickable">
+                        <div class="offering-icon">🤝</div>
+                        <h3>Industry Connect</h3>
+                        <p>Exclusive workshops, guest lectures, and Q&A sessions with industry experts and researchers from top companies.</p>
+                    </div>
+                    <div class="offering-card clickable">
+                        <div class="offering-icon">🌍</div>
+                        <h3>AI for Impact</h3>
+                        <p>A special track where we build real-world AI solutions for our community and local problems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Guiding Principle Section -->
+        <section class="vidhai-section vidhai-principle" id="vidhai-principle">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Guiding Principle</h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="principle-content">
+                    <blockquote class.thirukkural">
+                        "தாளாற்றித் தந்த பொருளெல்லாம் தக்கார்க்கு<br>
+                        வேளாண்மை செய்தற் பொருட்டு."
+                        <cite>— திருக்குறள் 212</cite>
+                    </blockquote>
+                    <div class="kural-translation">
+                        <p>"All wealth acquired through tireless effort is for the purpose of serving the worthy. We believe our hard-earned knowledge is a wealth meant to be shared, uplifting our entire community."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" id="cta-section">
+            <div class="container">
+                <h2>Join the Community</h2>
+                <p>Be part of a movement that's democratizing AI education and innovation.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:aividhai26@gmail.com" class="btn btn-primary clickable">Get Involved (Email)</a>
+                    <a href="https://chat.whatsapp.com/Hg3yR4KaG5k9PIDDjZYIHd" target="_blank" rel="noopener noreferrer" class="btn btn-outline clickable">Join WhatsApp</a>
+                     <a href="index.html" class="btn btn-outline clickable">Back to Portfolio</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="vidhai-footer">
+         <div class="container">
+            <div class="footer-grid" style="display: block; text-align: center;"> <!-- Simplified grid -->
+                <!-- Column 1: Founder -->
+                <div class="footer-column">
+                    <h4>An Initiative By</h4>
+                    <p>
+                        Manish P | Logesh S
+                    </p>
+                </div>
+                
+                <!-- Column 2: Connect -->
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/manish-p-5017032a3/" target="_blank" rel="noopener noreferrer" class="clickable">LinkedIn</a></li>
+                        <li><a href="https://github.com/Manish-010" target="_blank" rel="noopener noreferrer" class="clickable">GitHub</a></li>
+                        <li><a href="https://www.instagram.com/imanish_23?igsh=cnp0bDRmOGo4b3Iz" target="_blank" rel="noopener noreferrer" class="clickable">Instagram</a></li>
+                         <li><a href="mailto:aividhai26@gmail.com" class="clickable">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vidhai AI Initiative. All rights reserved.</p>
+            </div>
+         </div>
+     </footer>
+
+    <!-- Go to Top Button -->
+    <a href="#navbar" class="go-top-btn clickable" aria-label="Go to top">↑</a>
+
+    <!-- Embedded JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // --- 2. Hamburger Menu Logic ---
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu when a link is clicked
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // --- 3. Go to Top Button Logic ---
+            const goTopBtn = document.querySelector('.go-top-btn');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    goTopBtn.classList.add('show');
+                } else {
+                    goTopBtn.classList.remove('show');
+                }
+            });
+
+            // --- 4. Neural Network Canvas Background ---
+            const canvas = document.getElementById('neural-bg');
+            const ctx = canvas.getContext('2d');
+            
+            let particles;
+            const particleCount = 70;
+            const maxDistance = 120;
+            const particleColor = '#E07A5F'; // Use accent color
+            
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.vx = Math.random() * 0.5 - 0.25;
+                    this.vy = Math.random() * 0.5 - 0.25;
+                    this.radius = 2;
+                }
+                
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = particleColor;
+                    ctx.fill();
+                }
+                
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    
+                    if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
+                    if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
+                }
+            }
+            
+            function initParticles() {
+                particles = [];
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
+                }
+            }
+            
+            function connectParticles() {
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (dist < maxDistance) {
+                            ctx.beginPath();
+                            ctx.strokeStyle = particleColor;
+                            ctx.lineWidth = 0.2;
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+            
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                for (const particle of particles) {
+                    particle.update();
+                    particle.draw();
+                }
+                
+                connectParticles();
+                
+                requestAnimationFrame(animate);
+            }
+            
+            initParticles();
+            animate();
+            
+        });
+    </script>
+</body>
+</html>
+
